@@ -1,0 +1,30 @@
+{
+    "name": "musa11971/laravel-tvdb",
+    "description": "A TVDB API wrapper for Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "musa11971",
+            "email": "mussesemou99@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "musa11971\\TVDB\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "musa11971\\TVDB\\TVDBServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.1.3",
+        "ext-curl": "*",
+        "ext-json": "*"
+    }
+}
