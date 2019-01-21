@@ -21,6 +21,7 @@ class Series {
     public $synopsis;
     public $lastUpdated;
     public $airs;
+    public $watchRating;
     public $tvdbRating;
     public $added;
     public $addedBy;
@@ -48,6 +49,7 @@ class Series {
             'dayOfWeek' => @$data->airsDayOfWeek ?: null,
             'time'      => @$data->airsTime ?: null
         ];
+        $this->watchRating = (strlen($data->rating)) ? $data->rating : null;
         $this->tvdbRating = [
             'average'   => @$data->siteRating ?: null,
             'count'     => @$data->siteRatingCount ?: null
