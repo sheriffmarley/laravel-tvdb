@@ -15,9 +15,9 @@ class Actor {
     public function __construct($data) {
         $this->id = $data->id;
         $this->name = $data->name;
-        $this->role = $data->role;
-        $this->image = $data->image;
-        $this->imageURL = TVDB::IMAGE_URL_PREFIX . $this->image;
+        $this->role = (strlen($data->role)) ? $data->role : null;
+        $this->image = (strlen($data->image)) ? $data->image : null;
+        $this->imageURL = ($this->image !== null) ? TVDB::IMAGE_URL_PREFIX . $this->image : null;
         $this->lastUpdated = Carbon::parse($data->lastUpdated);
     }
 }
