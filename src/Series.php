@@ -16,6 +16,7 @@ class Series {
     public $status;
     public $firstAired;
     public $network;
+    public $runtime;
     public $genres;
     public $synopsis;
     public $lastUpdated;
@@ -39,6 +40,7 @@ class Series {
             'id'    => @$data->networkId ?: null,
             'name'  => @$data->network ?: null
         ];
+        $this->runtime = (isset($data->runtime) && strlen($data->runtime) && is_numeric($data->runtime)) ? (int) $data->runtime : null;
         $this->genres = @$data->genre ?: null;
         $this->synopsis = @$data->overview ?: null;
         $this->lastUpdated = (isset($data->lastUpdated)) ? Carbon::createFromTimestamp($data->lastUpdated) : null;
